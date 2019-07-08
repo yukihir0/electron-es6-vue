@@ -4,12 +4,21 @@
   "description": "",
   "main": "src/main/index.js",
   "scripts": {
+    "webpack": "./node_modules/.bin/webpack",
+    "webpack:production": "./node_modules/.bin/webpack --mode=production",
     "electron": "./node_modules/.bin/electron .",
-    "start": "npm run electron"
+    "start": "npm run webpack; npm run electron",
+    "start:production": "npm run webpack:production; npm run electron"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.6"
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "babel-loader": "^8.0.6",
+    "electron": "^5.0.6",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   }
 }
