@@ -1,4 +1,5 @@
 const path = require("path");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 const outputPath = path.join(__dirname, "dist");
 const mode = "development";
@@ -39,6 +40,10 @@ const rendererConfig = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: "vue-loader"
+      },
+      {
         test: /\.js?$/,
         use: {
           loader: "babel-loader",
@@ -47,8 +52,23 @@ const rendererConfig = {
           }
         },
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "vue-style-loader",
+          "css-loader"
+        ]
       }
     ]
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
   },
   devtool: "source-map"
 }

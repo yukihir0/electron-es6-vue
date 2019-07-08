@@ -1,3 +1,8 @@
-let hello = "hello!!";
+import Vue from "vue";
+import hello from "./hello.vue";
 
-console.log(hello);
+new Vue({
+  el: '#hello',
+  components: { hello },
+  template: "<hello></hello>"
+});
