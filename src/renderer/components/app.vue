@@ -2,6 +2,7 @@
   <div>
     <hello></hello>
     <goodbye></goodbye>
+    <counter></counter>
   </div>
 </template>
 
@@ -9,11 +10,16 @@
 import Vue from "vue";
 import hello from "./hello.vue";
 import goodbye from "./goodbye.vue";
+import counter from "./counter.vue";
 
-export default {}
+export default {
+  components: {
+    hello,
+    goodbye,
+    counter
+  }
+}
 
-Vue.component("hello", hello);
-Vue.component("goodbye", goodbye);
 </script>
 
 <style scoped>
