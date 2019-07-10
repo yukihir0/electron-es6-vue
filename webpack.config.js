@@ -41,7 +41,13 @@ const rendererConfig = {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        loader: "vue-loader",
+        options: {
+          loaders: {
+            scss: "vue-style-loader!css-loader!sass-loader",
+            sass: "vue-style-loader!css-loader!sass-loader?indentedSyntax"
+          }
+        }
       },
       {
         test: /\.js?$/,
@@ -59,6 +65,14 @@ const rendererConfig = {
           "vue-style-loader",
           "css-loader"
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "vue-style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
       }
     ]
   },
@@ -67,7 +81,7 @@ const rendererConfig = {
   ],
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js'
+      vue: "vue/dist/vue.js"
     }
   },
   devtool: "source-map"

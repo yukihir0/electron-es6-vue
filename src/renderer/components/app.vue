@@ -1,8 +1,20 @@
 <template>
   <div>
-    <hello></hello>
-    <goodbye></goodbye>
-    <counter></counter>
+    <div class="columns">
+      <div class="column is-full">
+        <hello></hello>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-full">
+        <goodbye></goodbye>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-full">
+        <counter></counter>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,5 +34,6 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss">
+@import "../../../node_modules/bulma/bulma.sass";
 </style>

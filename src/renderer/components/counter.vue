@@ -2,8 +2,8 @@
   <div>
     <p>{{ count }}</p>
     <p>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
+      <button class="button is-primary" @click="increment">+</button>
+      <button class="button is-primary" @click="decrement">-</button>
     </p>
   </div>
 </template>
@@ -26,5 +26,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

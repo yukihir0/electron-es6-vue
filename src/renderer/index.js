@@ -15,7 +15,7 @@ const store = new Vuex.Store({
 });
 
 new Vue({
-  el: "#hello",
+  el: "#app",
   components: { app },
   template: "<app></app>",
   store
